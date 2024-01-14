@@ -5,21 +5,21 @@
 主要使用pyradiomics提取影像组学特征：
 
 <a name="cJKz6"></a>
-# 1 特征提取：
+# 特征提取：
 在这里，我们使用pyradiomics来提取影像组学特征。首先，我们先介绍pyradiomica工具包，然后我们进行特征的提取。
 <a name="hgkiB"></a>
-## 1.1 pyradiomics的使用：
+## 1 pyradiomics的使用：
 PyRadiomics的官方文档:[https://pyradiomics.readthedocs.io/en/latest/](https://pyradiomics.readthedocs.io/en/latest/)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/38497976/1705118001124-74ee84df-ba95-4e12-949b-2fbe9020192a.png#averageHue=%23c6c3c2&clientId=u742953c3-c837-4&from=paste&height=595&id=u6c6e24bc&originHeight=744&originWidth=1362&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=206489&status=done&style=none&taskId=u7c152d36-a80a-4ce8-acf9-9201a1e9016&title=&width=1089.6)
 
 <a name="LIcmm"></a>
-### 1.1.1，在python环境下安装pyradiomics:
+### 1.1，在python环境下安装pyradiomics:
 
 ```python
 pip install pyradiomics
 ```
 
 <a name="IXZJW"></a>
-### 1.1.2,设置特征提取器，获得想要特征：
+### 1.2,设置特征提取器，获得想要特征：
 **通过自定义特征提取器，可以根据自己的需求来设置并提取特征。**<br />其实，需要设置两个方面：**1，图像类型；2，所要提取的特征；3，提取器设置**
 
 **第一步：图像类型：**首先，设置提取特征的**图像类型**，可以指定用于提取特征的图像类型。在pyradiomics包中为我们提供了许多可以使用的滤波器，所以我们可以使用原始图像及经过各种滤波器之后的图像，如下方表格。<br />具体可以参考官方：[https://pyradiomics.readthedocs.io/en/latest/customization.html#image-types](https://pyradiomics.readthedocs.io/en/latest/customization.html#image-types)
@@ -123,7 +123,7 @@ settings['interpolator'] = sitk.sitkBSpline
 还有其他的一些设置，根据自己的需要修改即可。
 
 <a name="lwdtr"></a>
-### 1.1.3 代码示例;
+# 2 代码示例;
 下面是一个CT肺部特征提取特征的代码示例：
 
 特征提取块设置：当然，你可以把这一块写成函数：
@@ -187,6 +187,7 @@ df.to_csv('Radiomics-Features.csv', index=0)
 print('Done')
 
 ```
+
 
 
 excel表：<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/38497976/1705201756258-96fd9abd-8cf1-4efc-a489-bee4c4e67b66.png#averageHue=%23fbfaf9&clientId=u4dd278b8-cae9-4&from=paste&height=352&id=ud19e4793&originHeight=440&originWidth=1604&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=16925&status=done&style=none&taskId=ufa51a800-47c1-41a6-ac19-d89e2eeadb1&title=&width=1283.2)
